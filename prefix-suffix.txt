@@ -1,0 +1,11 @@
+service
+svc
+srv
+agent
+local
+pen
+pentest
+pen.test
+pen-test
+pen_test
+test

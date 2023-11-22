@@ -299,6 +299,12 @@ def main():
     checkFile(serviceNamesFile)
     checkFile(prefixSuffixFile)
 
+    # check whether lists directory exists
+    if os.path.exists('lists'):
+        shutil.rmtree('lists')
+    else:
+        os.mkdir('lists')
+
     namesGenerator(firstNameFile, lastNameFile)
     servicesGenerator(serviceNamesFile, prefixSuffixFile)
     adminGenerator()

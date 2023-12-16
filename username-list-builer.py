@@ -301,9 +301,11 @@ def main():
 
     # check whether lists directory exists
     if os.path.exists('lists'):
-        shutil.rmtree('lists')
-    else:
-        os.mkdir('lists')
+        if os.path.isfile('lists'):
+            os.remove('lists')
+        else:
+            shutil.rmtree('lists')
+    os.mkdir('lists')
 
     namesGenerator(firstNameFile, lastNameFile)
     servicesGenerator(serviceNamesFile, prefixSuffixFile)
